@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            let name = document.getElementById("fullname").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let country = document.getElementById("country").value.trim();
+            let comments = document.getElementById("comments").value.trim();
+
+            if (name === "" || email === "" || country === "" || comments === "") {
+                alert("Please fill in all fields before submitting!");
+                return false;
+            }
+
+            alert("Form was submitted successfully!");
+            document.getElementById("contactForm").reset();
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="index.html">Home Page</a> | 
+        <a href="contact.html">Contact Me Page</a>
+    </nav>
+
+    <h1>Contact Me Page</h1>
+
+    <form id="contactForm" onsubmit="validateForm(event)">
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname"><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="country">Country:</label><br>
+        <input type="text" id="country" name="country"><br><br>
+
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="30"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
